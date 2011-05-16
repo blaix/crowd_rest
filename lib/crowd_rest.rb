@@ -1,0 +1,3 @@
+module CrowdRest
+  # Your code goes here...
+end
