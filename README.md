@@ -19,3 +19,17 @@ A ruby client for [Atlassian's Crowd REST API](http://confluence.atlassian.com/d
     response = CrowdRest::Session.create("baduser", "badpass")
     response.code   # => 400
     response.reason # => INVALID_USER_AUTHENTICATION
+
+    # check for existing login session
+    response = CrowdRest::Session.find(token)
+    response.code # => 200
+    
+    # check for non-existant session
+    response = CrowdRest::Session.find("badtoken")
+    response.code == 200 # => false
+    
+    # get the user associated with a login session
+    login = CrowdRest::Session.create("username", "password")
+    response = CrowdRest::Session.find(login.token, :include => :user)
+    response.code         # => 200
+    response.user['name'] # => "username"

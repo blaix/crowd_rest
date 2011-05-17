@@ -1,19 +1,40 @@
-module CrowdRest
-  SuccessfullResponse = Struct.new(:token, :code, :body)
-  FailedResponse = Struct.new(:reason, :message, :code, :body)
+require 'ostruct'
 
+module CrowdRest
   class Session
     def self.create(username, password)
       body = "<authentication-context>
         <username>#{username}</username>
         <password>#{password}</password>
       </authentication-context>"
-      res = CrowdRest.post("/session", :body => body)
-      if res.code == 201
-        SuccessfullResponse.new(res['session']['token'], res.code, res.body)
-      else
-        FailedResponse.new(res['reason'], res['message'], res.code, res.body)
+      response = CrowdRest.post("/session", :body => body)
+      normalize_response(response, 201) do |successful_response|
+        successful_response.token = response['session']['token']
       end
+    end
+    
+    def self.find(token, options = {})
+      request_user = options[:include] && options[:include] == :user
+      path = "/session/#{token}"
+      path << "?expand=user" if request_user
+      response = CrowdRest.get(path)
+      normalize_response(response) do |successful_response|
+        successful_response.user = response['session']['user']
+      end
+    end
+    
+    private
+    def self.normalize_response(response, success_code = 200)
+      attributes = {
+        :code => response.code,
+        :body => response.body,
+        :reason => response['reason'],
+        :message => response['message']
+      }
+
+      norm_response = OpenStruct.new(attributes)
+      yield(norm_response) if response.code == success_code
+      norm_response
     end
   end
 end
