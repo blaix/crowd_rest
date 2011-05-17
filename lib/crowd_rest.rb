@@ -10,6 +10,10 @@ module CrowdRest
     attr_reader :app_name, :app_pass
   end
   
+  def self.config
+    yield(self)
+  end
+  
   def self.crowd_url=(url)
     base_uri("#{url}/crowd/rest/usermanagement/1")
   end

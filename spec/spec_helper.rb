@@ -6,9 +6,11 @@ require "vcr"
 
 require "crowd_rest"
 
-CrowdRest.crowd_url = "http://127.0.0.1:8095"
-CrowdRest.app_name = "demo"
-CrowdRest.app_pass = "demo_pass"
+CrowdRest.config do |c|
+  c.crowd_url = "http://127.0.0.1:8095"
+  c.app_name = "demo"
+  c.app_pass = "demo_pass"
+end
 
 VCR.config do |c|
   c.cassette_library_dir = File.expand_path("cassette_library", File.dirname(__FILE__))
