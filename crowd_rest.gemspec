@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Justin Blake"]
   s.email       = ["justin@hentzia.com"]
-  s.homepage    = "https://github.com/blaix/crowd-rest"
+  s.homepage    = "https://github.com/blaix/crowd_rest"
   s.summary     = %q{Ruby client for Atlassian's Crowd REST API}
   s.description = %q{Ruby client for Atlassian's Crowd REST API. Word up.}
 
