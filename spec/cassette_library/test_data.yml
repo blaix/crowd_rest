@@ -1,0 +1,308 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session
+    body: |-
+      <authentication-context>
+              <username>crowduser</username>
+              <password>crowdpass</password>
+            </authentication-context>
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=97F202B9299BEEFC50D91A2F6067B09C; Path=/crowd
+      cache-control: 
+      - no-cache, no-store, no-transform
+      location: 
+      - http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00
+      content-type: 
+      - application/xml
+      content-length: 
+      - "364"
+      date: 
+      - Tue, 17 May 2011 21:33:57 GMT
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><session expand="user"><token>vew1d0n2wdv805BwynIH3Q00</token><user name="crowduser"><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user?username=crowduser"/></user><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00"/></session>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session
+    body: |-
+      <authentication-context>
+              <username>baduser</username>
+              <password>badpass</password>
+            </authentication-context>
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 400
+      message: Bad Request
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=8A74186ED063D8E120D82B41EE0C483C; Path=/crowd
+      content-type: 
+      - application/json
+      transfer-encoding: 
+      - chunked
+      date: 
+      - Tue, 17 May 2011 21:33:57 GMT
+    body: "{\"reason\":\"INVALID_USER_AUTHENTICATION\",\"message\":\"baduser\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session
+    body: |-
+      <authentication-context>
+              <username>crowduser</username>
+              <password>crowdpass</password>
+            </authentication-context>
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=CDF0A341D6F4573D1EDC661B7489B1DE; Path=/crowd
+      cache-control: 
+      - no-cache, no-store, no-transform
+      location: 
+      - http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00
+      content-type: 
+      - application/xml
+      content-length: 
+      - "364"
+      date: 
+      - Tue, 17 May 2011 21:33:57 GMT
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><session expand="user"><token>vew1d0n2wdv805BwynIH3Q00</token><user name="crowduser"><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user?username=crowduser"/></user><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00"/></session>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00
+    body: 
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=88949BAF0A280647E63F1F00813F3226; Path=/crowd
+      content-type: 
+      - application/xml
+      content-length: 
+      - "777"
+      date: 
+      - Tue, 17 May 2011 21:33:58 GMT
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><session expand="user"><token>vew1d0n2wdv805BwynIH3Q00</token><user name="crowduser"><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user?username=crowduser"/><first-name>Crowd</first-name><last-name>Test</last-name><display-name>Crowd Test</display-name><email>crowduser@test.com</email><password><link rel="edit" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user/password?username=crowduser"/></password><active>true</active><attributes><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user/attribute?username=crowduser"/></attributes></user><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00"/></session>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session/beefface
+    body: 
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 400
+      message: Bad Request
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=5A428FDB960F4B444090F7CDC4A573AE; Path=/crowd
+      content-type: 
+      - application/json
+      transfer-encoding: 
+      - chunked
+      date: 
+      - Tue, 17 May 2011 21:33:58 GMT
+    body: "{\"reason\":\"INVALID_SSO_TOKEN\",\"message\":\"Failed to find entity of type [com.atlassian.crowd.model.token.Token] with identifier [beefface]\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session
+    body: |-
+      <authentication-context>
+              <username>crowduser</username>
+              <password>crowdpass</password>
+            </authentication-context>
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=0221CFF6FA9246AC77638791F918A99F; Path=/crowd
+      cache-control: 
+      - no-cache, no-store, no-transform
+      location: 
+      - http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00
+      content-type: 
+      - application/xml
+      content-length: 
+      - "364"
+      date: 
+      - Tue, 17 May 2011 21:33:58 GMT
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><session expand="user"><token>vew1d0n2wdv805BwynIH3Q00</token><user name="crowduser"><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user?username=crowduser"/></user><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00"/></session>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00?expand=user
+    body: 
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=8CA8506E288F0AB3971BBADCE3B1ECB4; Path=/crowd
+      content-type: 
+      - application/xml
+      content-length: 
+      - "777"
+      date: 
+      - Tue, 17 May 2011 21:33:59 GMT
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><session expand="user"><token>vew1d0n2wdv805BwynIH3Q00</token><user name="crowduser"><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user?username=crowduser"/><first-name>Crowd</first-name><last-name>Test</last-name><display-name>Crowd Test</display-name><email>crowduser@test.com</email><password><link rel="edit" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user/password?username=crowduser"/></password><active>true</active><attributes><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/user/attribute?username=crowduser"/></attributes></user><link rel="self" href="http://127.0.0.1:8095/crowd/rest/usermanagement/1/session/vew1d0n2wdv805BwynIH3Q00"/></session>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://demo:demo_pass@127.0.0.1:8095/crowd/rest/usermanagement/1/search
+    body: 
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic ZGVtbzpkZW1vX3Bhc3M=
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 415
+      message: Unsupported Media Type
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      set-cookie: 
+      - JSESSIONID=53651C114D79062C45E7552387116844; Path=/crowd
+      content-type: 
+      - text/html;charset=utf-8
+      content-length: 
+      - "1051"
+      date: 
+      - Tue, 17 May 2011 21:33:59 GMT
+    body: "<html><head><title>Apache Tomcat/6.0.32 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 415 - </h1><HR size=\"1\" noshade=\"noshade\"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The server refused this request because the request entity is in a format not supported by the requested resource for the requested method ().</u></p><HR size=\"1\" noshade=\"noshade\"><h3>Apache Tomcat/6.0.32</h3></body></html>"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://badname:badpass@127.0.0.1:8095/crowd/rest/usermanagement/1/search
+    body: 
+    headers: 
+      content-type: 
+      - text/xml
+      authorization: 
+      - Basic YmFkbmFtZTpiYWRwYXNz
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 401
+      message: Unauthorized
+    headers: 
+      server: 
+      - Apache-Coyote/1.1
+      x-embedded-crowd-version: 
+      - Crowd/2.2.4
+      x-crowd-user-management-version: 
+      - "1"
+      www-authenticate: 
+      - BASIC realm="Crowd REST Service"
+      content-type: 
+      - text/plain;charset=UTF-8
+      transfer-encoding: 
+      - chunked
+      date: 
+      - Tue, 17 May 2011 21:33:59 GMT
+    body: Application failed to authenticate
+    http_version: "1.1"
