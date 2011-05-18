@@ -72,7 +72,12 @@ describe CrowdRest::Session do
     
     it "includes the user in the response" do
       @response.user.should_not be_nil
-      @response.user['name'].should == "crowduser"
+    end
+    
+    it "defines attribute methods for the user" do
+      @response.user.name.should == "crowduser"
+      @response.user.display_name.should == "Crowd Test"
+      @response.user.email.should == "crowduser@test.com"
     end
   end
 end
