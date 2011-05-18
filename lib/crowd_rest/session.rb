@@ -19,7 +19,8 @@ module CrowdRest
       path << "?expand=user" if request_user
       response = CrowdRest.get(path)
       normalize_response(response) do |successful_response|
-        successful_response.user = OpenStruct.new(response['session']['user'])
+        user = response['session']['user']
+        successful_response.user = CrowdRest::User.new(user)
       end
     end
     

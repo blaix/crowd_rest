@@ -70,14 +70,9 @@ describe CrowdRest::Session do
       @response = CrowdRest::Session.find(login.token, :include => :user)
     end
     
-    it "includes the user in the response" do
+    it "includes a crowd user in the response" do
       @response.user.should_not be_nil
-    end
-    
-    it "defines attribute methods for the user" do
-      @response.user.name.should == "crowduser"
-      @response.user.display_name.should == "Crowd Test"
-      @response.user.email.should == "crowduser@test.com"
+      @response.user.should be_a(CrowdRest::User)
     end
   end
 end

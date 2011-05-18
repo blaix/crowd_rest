@@ -4,6 +4,8 @@ module CrowdRest
   include HTTParty
 
   autoload :Session, 'crowd_rest/session'
+  autoload :User,    'crowd_rest/user'
+  
   headers 'Content-type' => 'text/xml'
   
   class << self
