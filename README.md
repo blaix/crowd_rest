@@ -2,6 +2,10 @@
 
 A ruby client for [Atlassian's Crowd REST API](http://confluence.atlassian.com/display/CROWDDEV/Crowd+REST+APIs).
 
+## Installation
+
+    gem install crowd_rest
+
 ## Usage
 
     require 'crowd_rest'
