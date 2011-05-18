@@ -33,3 +33,5 @@ A ruby client for [Atlassian's Crowd REST API](http://confluence.atlassian.com/d
     # get the user associated with a login session
     response = CrowdRest::Session.find(token, :include => :user)
     response.user.name # => "gooduser"
+
+*We use [semantic versioning](http://semver.org/). You should too.*
