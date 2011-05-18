@@ -24,7 +24,7 @@ if ENV['DONT_FAKE']
   at_exit { VCR.eject_cassette }
 else
   puts "VCR: Using previously recorded http requests. " +
-       "Run with DONT_FAKE=1 to hit the web and record new requests."
+       "Run with DONT_FAKE=1 to hit local crowd server and record new requests."
   record_type = :none
 end
 
