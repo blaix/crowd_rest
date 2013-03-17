@@ -75,4 +75,75 @@ describe CrowdRest::Session do
       @response.user.should be_a(CrowdRest::User)
     end
   end
+
+  describe ".validate(token)" do
+    context "given a valid session token" do
+      before(:all) do
+        login = CrowdRest::Session.create("crowduser", "crowdpass")
+        @response = CrowdRest::Session.validate(login.token)
+      end
+
+      it "responds successfully" do
+        @response.code.should == 200
+      end
+    end
+
+    context "given an invalid session token" do
+      before(:all) do
+        @response = CrowdRest::Session.validate("beefface")
+      end
+
+      it_behaves_like "a failed request"
+
+      it "does not respond successfuly" do
+        @response.code.should == 404
+      end
+    end
+  end
+
+  describe ".invalidate(token)" do
+    context "given a valid session token" do
+      before(:all) do
+        login = CrowdRest::Session.create("crowduser", "crowdpass")
+        @response = CrowdRest::Session.invalidate(login.token)
+      end
+
+      it "responds successfully" do
+        @response.code.should == 204
+      end
+    end
+
+    context "given an invalid session token" do
+      before(:all) do
+        @response = CrowdRest::Session.invalidate("beefface")
+      end
+
+      it "responds successfully" do
+        @response.code.should == 204
+      end
+    end
+  end
+
+  describe ".destroy(username)" do
+    context "given a valid username" do
+      before(:all) do
+        login = CrowdRest::Session.create("crowduser", "crowdpass")
+        @response = CrowdRest::Session.destroy("crowduser")
+      end
+
+      it "responds successfully" do
+        @response.code.should == 204
+      end
+    end
+
+    context "given an invalid username" do
+      before(:all) do
+        @response = CrowdRest::Session.destroy("beefface")
+      end
+
+      it "does not respond successfully" do
+        @response.code.should == 404
+      end
+    end
+  end
 end
