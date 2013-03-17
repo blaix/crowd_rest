@@ -1,3 +1,8 @@
+# 2013-03-16: v0.1.0
+
+* Add support for user session destruction and token validation and
+  invalidation (@kunklejr).
+
 # 2011-05-18: v0.0.2
 
 * The returned user from CrowdRest::Session.find(token, :include => :user) is
