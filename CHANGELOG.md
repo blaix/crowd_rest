@@ -1,3 +1,7 @@
+# 2016-01-05: v0.1.1
+
+* Bump HTTParty Gem Version requirement
+
 # 2013-03-16: v0.1.0
 
 * Add support for user session destruction and token validation and
