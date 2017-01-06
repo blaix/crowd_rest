@@ -1,6 +1,6 @@
 # 2016-01-05: v0.1.1
 
-* Bump HTTParty Gem Version requirement
+* Bump HTTParty Gem Version requirement to 0.13
 
 # 2013-03-16: v0.1.0
 
